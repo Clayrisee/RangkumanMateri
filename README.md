@@ -59,22 +59,27 @@ Optimizer adalah sebuah algoritma yang berfungsi untuk meminimalkan fungsi kesal
 
 ### Gradient Descent
 Gradient Descent adalah sebuah algoritma optimasi yang paling dasar dan banyak digunakan seperti dalam permasalahan regresi dan juga klasifikasi. Contoh penggunaan gradient descent adalah pada saat proses propagasi balik yang telah dijelaskan pada sub bab sebelumnya. Algoritma ini bergantung pada turunan orde pertama dari fungsi kerugian (loss function) dan akan menghitung arah tujuan bobot yang harus diubah sehingga nilai kerugian mencapai nilai minimum. Propagasi balik akan mengirim nilai kerugian dari satu lapisan ke lapisan berikutnya. Parameter model akan dimodifikasi tergantung pada nilai kerugian, sehingga dapat diminimalkan. Gradient Descent memiliki persamaan sebagai berikut:
+
 ![image](https://user-images.githubusercontent.com/54859935/134268382-80448fa9-ad86-49ef-a269-3bec81c98644.png)
 
 ### Stochastic Gradient Descent
 Stochastic Gradient Descent (SGD) adalah suatu fungsi optimasi varian dari gradient descent. Pada fungsi SGD, parameter model akan diperbaharui lebih sering dibandingkan dengan fungsi optimasi gradient descent. Parameter model yang sering diperbaharui menyebabkan fluktuasi fungsi kerugian pada intensitas yang berbeda dan juga parameter model memiliki varians yang tinggi. Persamaan SGD adalah sebagai berikut:
+
 ![image](https://user-images.githubusercontent.com/54859935/134268436-2109e184-247b-4e6f-b2a6-568432374e6b.png)
 
 ### Adam
 Adam adalah algoritma optimasi yang biasa digunakan sebagai pengganti SGD klasik untuk memperbaharui weight network secara iteratif pada data latih. Adam bekerja dengan momentum orde pertama dan orde kedua. Prinsip utama algoritma ini adalah bahwa suatu proses perubahan nilai tidak terjadi begitu cepat karena dapat melewati nilai minimum. Proses perubahan nilai dilakukan secara perlahan untuk mendapatkan hasil yang tepat. Secara khusus, algoritma ini menghitung rata-rata eksponensial dari gradien sebelumnya M(t). M(t) dan V(t) adalah nilai momen pertama yang merupakan Mean dan momen kedua yang masing-masing merupakan varians tidak terpusat dari gradien.
+
 ![image](https://user-images.githubusercontent.com/54859935/134268476-37b98ec7-31d1-415b-995f-0741bfbfd25f.png)
 
 Di sini, kita mengambil mean dari M(t) dan V(t) sehingga E[m(t)] dapat sama dengan E[g(t)] di mana, E[f(x)] adalah nilai harapan dari f(x). Untuk memperbaharui parameter, berikut bentuk formulanya:
+
 ![image](https://user-images.githubusercontent.com/54859935/134268517-a417f21c-4ac1-41a7-a179-5d0830b11570.png)
 
 
 ### AdamW
 AdamW adalah sebuah alrogritma Adaptive Momentum dengan tambahan weight decay. Prinsip utama optimizer ini sama dengan Adam yaitu suatu proses perubahan nilai tidak terjadi begitu cepat karena dapat melewati nilai minimum. Proses perubahan nilai dilakukan secara perlahan untuk mendapatkan hasil yang tepat. Weight decay  di sini berfungsi untuk mendapatkan nilai learning rate yang optimal karena pada saat mencari nilai learning rate yang optimal, bobot weight decay berpengaruh. AdamW menyatukan algoritma adam dengan weight decay yaitu hyperparameter yang dapat diset. Algoritma dari AdamW dapat di lihat pada gambar di bawah ini.
+
 ![image](https://user-images.githubusercontent.com/54859935/134268535-6da29118-f656-499d-8893-5915f421d631.png)
 
 ## Loss Function
@@ -82,6 +87,7 @@ Loss function adalah sebuah cara untuk mengukur seberapa bagus performa yang dih
 
 ### Cross entropy
 Cross entropy merupakan loss function yang biasa digunakan dalam multi-class classification. Fungsi ini dapat mengetahui seberapa besar nilai error yang dilakukan deep learning dengan nilai output berupa probabilitas. Fungsi ini akan mengukur entropy relatif antara dua distribusi probabilitas pada data yang sama dengan cara mengurangi log negatif dari dataset. Persamaan fungsi ini antara lain:
+
 ![image](https://user-images.githubusercontent.com/54859935/134268574-fda666ff-a3b7-453e-8ea6-779096d56f04.png)
 
 
